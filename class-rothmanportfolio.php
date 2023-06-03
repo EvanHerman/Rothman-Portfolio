@@ -344,8 +344,20 @@ class Rothmanportfolio {
 		wp_register_script( 'portfolio-script', plugins_url( 'library/js/brothman_portfolio.js', __FILE__ ), array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( 'portfolio-script' );
 
-		// enqueue the react to be used on the front end.
-		wp_enqueue_script( 'index', plugin_dir_url( __FILE__ ) . 'wordpress-block-react/build/index.js', array( 'wp-element' ), '1.0.0', true );
+		// query the portfolio items, localize them and enqueue the react to be used on the front end.
+
+		// Query all portfolio items
+		
+		// reguster the react script.
+		wp_register_script( 'react-index', plugin_dir_url( __FILE__ ) . 'wordpress-block-react/build/index.js', array( 'wp-element' ), '1.0.0', true );
+
+		// localize the portfolio items into the react script
+		// wp_localize_script();
+
+		// enqueue the react script to be used on the front end
+		wp_enqueue_script( 'react-index' );
+
+		// wp_enqueue_script( 'index', plugin_dir_url( __FILE__ ) . 'wordpress-block-react/build/index.js', array( 'wp-element' ), '1.0.0', true );
 
 		// enqueue bootstrap.
 		wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css', array(), '1.0.0' );
