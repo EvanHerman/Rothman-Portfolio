@@ -1,6 +1,6 @@
 name: CSS Lint
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   linters:
@@ -12,5 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Analyze CSS statically using stylelint
-        uses: moneyforward/stylelint-action@v0
+      - name: Install node packages
+        run: npm ci
+      - name: Run CSS lint
+        run: wp-scripts lint-style
