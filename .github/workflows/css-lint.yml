@@ -15,4 +15,4 @@ jobs:
       - name: Install node packages
         run: npm ci
       - name: Run CSS lint
-        run: npx wp-scripts lint-style
+        run: npm run lint:style
