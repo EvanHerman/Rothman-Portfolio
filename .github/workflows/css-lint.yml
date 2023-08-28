@@ -13,6 +13,6 @@ jobs:
         with:
           node-version: 18
       - name: Install node packages
-        run: npm ci
+        run: npm install
       - name: Run CSS lint
         run: wp-scripts lint-style
