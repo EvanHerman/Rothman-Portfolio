@@ -12,7 +12,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - uses: actions-hub/stylelint@master
-        env:
-          INDENT_SPACES: 2
-          PATTERN: "library/css/*.css"
+      - name: Analyze CSS statically using stylelint
+        uses: moneyforward/stylelint-action@v0
